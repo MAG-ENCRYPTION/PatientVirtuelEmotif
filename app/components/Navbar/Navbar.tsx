@@ -14,11 +14,12 @@ interface NavigationItem {
 }
 
 const navigation: NavigationItem[] = [
-    { name: 'About Us', href: '#aboutus-section', current: false },
-    { name: 'Services', href: '#services-section', current: false },
-    { name: 'FAQ', href: '#faq-section', current: false },
-    { name: 'Blog', href: '#blog-section', current: false },
-    { name: 'Testimonial', href: '#testimonial-section', current: false },
+    { name: 'Accueil', href: '#accueil', current: false },
+    { name: 'Objectif', href: '#Objectif', current: false },
+    { name: 'Outil', href: '#outil', current: false },
+    { name: 'Manuel', href: '#Manuel', current: false },
+    { name: 'Contributeurs', href: '#contributeur', current: false },
+    { name: 'Contact', href: '#contact', current: false },
 ]
 
 function classNames(...classes: string[]) {
@@ -26,7 +27,6 @@ function classNames(...classes: string[]) {
 }
 
 const Navbar = () => {
-
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
@@ -35,18 +35,19 @@ const Navbar = () => {
                 <div className="mx-auto max-w-7xl p-3 md:p-4 lg:px-8">
                     <div className="relative flex h-12 sm:h-20 items-center">
                         <div className="flex flex-1 items-center sm:justify-between">
-
                             {/* LOGO */}
-
                             <div className="flex flex-shrink-0 items-center border-right">
-                                <Link href="/" className='text-2xl sm:text-4xl font-semibold text-black'>
-                                    Desgy Solutions
+                                <Link href="/">
+                                    <img
+                                        src="/images/banner/Logo_Diagverse.png" // Remplacez par le chemin correct vers votre logo
+                                        alt="Logo"
+                                        className="h-2 w-40 sm:h-40" // Ajustez la taille avec Tailwind
+                                    />
                                 </Link>
                             </div>
 
                             {/* LINKS */}
-
-                            <div className="hidden lg:flex items-center border-right ">
+                            <div className="hidden lg:flex items-center border-right">
                                 <div className="flex justify-end space-x-4">
                                     {navigation.map((item) => (
                                         <Link
@@ -62,27 +63,19 @@ const Navbar = () => {
                                         </Link>
                                     ))}
                                 </div>
-
                             </div>
-                            {/* <button className='hidden lg:flex justify-end text-xl font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white'>Contact us</button> */}
                             <Contactusform />
                         </div>
 
-
                         {/* DRAWER FOR MOBILE VIEW */}
-
-                        {/* DRAWER ICON */}
-
-                        <div className='block lg:hidden'>
+                        <div className="block lg:hidden">
                             <Bars3Icon className="block h-6 w-6" aria-hidden="true" onClick={() => setIsOpen(true)} />
                         </div>
 
                         {/* DRAWER LINKS DATA */}
-
                         <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
                             <Drawerdata />
                         </Drawer>
-
                     </div>
                 </div>
             </>

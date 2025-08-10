@@ -13,7 +13,7 @@ const Banner = () => {
                     </div>
                     <div className="py-3 text-center lg:text-start">
                         <h1 className='text-6xl lg:text-80xl font-bold text-darkpurple'>
-                        Apprendre<br/>à bien<br /> Diagnostiquer
+                            Bienvenue<br/>dans le<br /> DIAGVERSE
                         </h1>
                     </div>
                     <div className='my-7 text-center lg:text-start'>
@@ -25,8 +25,8 @@ const Banner = () => {
 
                 {/* COLUMN-2 */}
 
-                <div className='lg:-m-24 lg:pt-20 hidden lg:block'>
-                    <Image src="/images/banner/banner.svg" alt="hero-image" width={800} height={642} />
+                <div className='lg:-m-35 hidden lg:block'>
+                    <Image src="/images/banner/DiAGNOSTIQUER_ET_APPRENDRE.png" alt="hero-image" width={600} height={142} />
                 </div>
 
             </div>

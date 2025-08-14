@@ -19,7 +19,7 @@ const navigation: NavigationItem[] = [
     { name: 'Outil', href: '#outil', current: false },
     { name: 'Manuel', href: '#Manuel', current: false },
     { name: 'Contributeurs', href: '#contributeur', current: false },
-    { name: 'Contact', href: '#contact', current: false },
+    { name: 'Contact', href: '#FAQ', current: false },
 ]
 
 function classNames(...classes: string[]) {

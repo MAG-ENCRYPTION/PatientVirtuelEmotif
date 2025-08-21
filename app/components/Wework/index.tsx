@@ -2,127 +2,117 @@
 import Slider from "react-slick";
 import React, { Component } from "react";
 import Image from "next/image";
+import { Linkedin } from 'lucide-react';
 
-// CAROUSEL DATA
-
-interface DataType {
-    profession: string;
+// CAROUSEL DATA: Remplacez ces données par les informations de vos contributeurs
+interface Contributor {
     name: string;
-    imgSrc: string;
+    role: string;
+    avatar: string; // Chemin vers l'avatar, ex: '/images/team/avatar1.png'
+    linkedinUrl: string;
 }
 
-const postData: DataType[] = [
+const contributorsData: Contributor[] = [
     {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar.svg',
+        name: 'Nom Contributeur 1',
+        role: 'Chef de projet',
+        avatar: '/images/wework/avatar.svg', // Placeholder, à remplacer
+        linkedinUrl: '#',
     },
     {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar3.svg',
+        name: 'Nom Contributeur 2',
+        role: 'Développeur Unreal',
+        avatar: '/images/wework/avatar3.svg', // Placeholder, à remplacer
+        linkedinUrl: '#',
     },
     {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar4.svg',
+        name: 'Nom Contributeur 3',
+        role: 'Spécialiste IA',
+        avatar: '/images/wework/avatar4.svg', // Placeholder, à remplacer
+        linkedinUrl: '#',
     },
     {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar.svg',
+        name: 'Nom Contributeur 4',
+        role: 'UI/UX Designer',
+        avatar: '/images/wework/avatar.svg', // Placeholder, à remplacer
+        linkedinUrl: '#',
     },
     {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar3.svg',
+        name: 'Nom Contributeur 5',
+        role: 'Médecin Consultant',
+        avatar: '/images/wework/avatar3.svg', // Placeholder, à remplacer
+        linkedinUrl: '#',
     },
-    {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar4.svg',
-    },
-]
+];
 
 // CAROUSEL SETTINGS
-
-
-export default class MultipleItems extends Component {
-
+export default class Wework extends Component {
     render() {
         const settings = {
-            dots: false,
+            dots: true,
             infinite: true,
-            slidesToShow: 5,
-            // centerMode: true,
+            speed: 500,
+            slidesToShow: 3,
             slidesToScroll: 1,
             arrows: false,
             autoplay: true,
-            speed: 4000,
-            autoplaySpeed: 2000,
-            cssEase: "linear",
+            autoplaySpeed: 3000,
             responsive: [
                 {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
+                    breakpoint: 1024,
+                    settings: { slidesToShow: 2 }
                 },
                 {
-                    breakpoint: 800,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
-                },
-                {
-                    breakpoint: 450,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        dots: false
-                    }
+                    breakpoint: 640,
+                    settings: { slidesToShow: 1 }
                 }
             ]
         };
 
-
         return (
-            <div className="bg-wework py-32">
-
-                <div className='mx-auto max-w-2xl lg:max-w-7xl sm:py-4 lg:px-8 '>
-
+            <section id="contributeurs" className="py-20 sm:py-32">
+                <div className='mx-auto max-w-7xl px-6 lg:px-8'>
                     <div className="text-center">
-                        <h3 className="text-4xl sm:text-6xl font-bold text-black my-2">We work in several verticals.</h3>
-                        <h3 className="text-4xl sm:text-6xl font-bold text-black opacity-50 lg:mr-48 my-2">We work in several verticals.</h3>
-                        <h3 className="text-4xl sm:text-6xl font-bold text-black opacity-25 lg:-mr-32 my-2">We work in several verticals.</h3>
+                        <h2 className="text-4xl lg:text-5xl font-bold text-darkpurple mb-4">
+                            Nos Contributeurs
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            L équipe passionnée derrière le projet DiagVerse.
+                        </p>
                     </div>
 
-                </div>
-
-                <Slider {...settings}>
-                    {postData.map((items, i) => (
-                        <div key={i}>
-                            <div className='bg-white m-3 py-14 my-10 text-center shadow-xl rounded-3xl'>
-                                <div className='relative'>
-                                    <Image src={items.imgSrc} alt="gaby" width={182} height={182} className="inline-block m-auto" />
-                                    <Image src={'/images/wework/linkedin.svg'} alt="greenbg" width={120} height={120} className=" absolute inline-block position-linkedin" />
+                    <div className="mt-16">
+                        <Slider {...settings}>
+                            {contributorsData.map((contributor) => (
+                                <div key={contributor.name} className="px-4">
+                                    <div className='bg-white text-center shadow-lg rounded-2xl p-8 group transition-all duration-300 hover:-translate-y-2'>
+                                        <div className='relative w-32 h-32 mx-auto'>
+                                            <Image
+                                                src={contributor.avatar}
+                                                alt={`Avatar de ${contributor.name}`}
+                                                width={128}
+                                                height={128}
+                                                className="rounded-full object-cover"
+                                            />
+                                            <a
+                                                href={contributor.linkedinUrl}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="absolute bottom-0 right-0 bg-blue text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                                                aria-label={`Profil LinkedIn de ${contributor.name}`}
+                                            >
+                                                <Linkedin size={20} />
+                                            </a>
+                                        </div>
+                                        <h3 className='text-xl font-bold pt-6 text-darkpurple'>{contributor.name}</h3>
+                                        <p className='text-md font-normal pt-1 text-gray-500'>{contributor.role}</p>
+                                    </div>
                                 </div>
-                                <h4 className='text-4xl font-bold pt-14'>{items.name}</h4>
-                                <h3 className='text-2xl font-normal pt-4 pb-2 opacity-50'>{items.profession}</h3>
-                            </div>
-                        </div>
-                    ))}
-                </Slider>
-
-            </div>
-
+                            ))}
+                        </Slider>
+                    </div>
+                </div>
+            </section>
         );
     }
 }

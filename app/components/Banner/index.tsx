@@ -1,37 +1,37 @@
-import Image from "next/image";
+import React from 'react';
+import { PlayCircle } from 'lucide-react';
 
 const Banner = () => {
     return (
-        <div className='mx-auto max-w-7xl my-10 sm:py-10 px-6 lg:px-8'>
-            <div className='grid grid-cols-1 lg:grid-cols-2 my-16'>
+        <section
+            id="accueil"
+            className="relative h-screen flex items-center justify-center text-center text-white bg-cover bg-center"
 
-                {/* COLUMN-1 */}
+            style={{ backgroundImage: 'url(/images/banner/DiAGNOSTIQUER_ET_APPRENDRE.png)' }}
+        >
 
-                <div className="mx-auto sm:mx-0">
-                    <div className='py-3 text-center lg:text-start'>
-                        <button className='text-blue bg-lightblue hover:shadow-xl text-sm md:text-lg font-bold px-6 py-1 rounded-3xl tracking-wider hover:text-white hover:bg-black'>PATIENT VIRTUEL</button>
-                    </div>
-                    <div className="py-3 text-center lg:text-start">
-                        <h1 className='text-6xl lg:text-80xl font-bold text-darkpurple'>
-                            Bienvenue<br/>dans le<br /> DIAGVERSE
-                        </h1>
-                    </div>
-                    <div className='my-7 text-center lg:text-start'>
-                        <button className='text-sm md:text-xl font-semibold hover:shadow-xl bg-blue text-white py-3 px-6 md:py-5 md:px-14 rounded-full hover:bg-hoblue'>
-                            Get Started
-                        </button>
-                    </div>
-                </div>
+            <div className="absolute inset-0 bg-black opacity-60"></div>
 
-                {/* COLUMN-2 */}
-
-                <div className='lg:-m-35 hidden lg:block'>
-                    <Image src="/images/banner/DiAGNOSTIQUER_ET_APPRENDRE.png" alt="hero-image" width={600} height={142} />
-                </div>
-
+            <div className="relative z-10 p-4 max-w-4xl mx-auto">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                    Bienvenue dans DiagVerse
+                </h1>
+                <p className="text-xl md:text-2xl mb-6 font-light">
+                    L 'immersion au coeur du diagnostic médical
+                </p>
+                <p className="text-lg md:text-xl mb-8">
+                    Apprendre à diagnostiquer n' a jamais été aussi simple.
+                </p>
+                <a
+                    href="#demo"
+                    className="bg-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-navyblue transition-transform transform hover:scale-105 inline-flex items-center gap-3"
+                >
+                    <PlayCircle className="h-6 w-6" />
+                    Essayer la démo gratuite
+                </a>
             </div>
-        </div>
-    )
+        </section>
+    );
 }
 
 export default Banner;

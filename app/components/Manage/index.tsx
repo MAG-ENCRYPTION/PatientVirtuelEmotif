@@ -1,159 +1,70 @@
-"use client"
-import { useState } from 'react';
-import { Switch } from '@headlessui/react';
-import Image from 'next/image';
+import React from 'react';
+import { Box, User, Activity, Smile, MessageSquare, MonitorSmartphone } from 'lucide-react';
 
-
-const names = [
+const features = [
     {
-        heading: "Startup",
-        price: 41,
-        user: 'per user, per month',
-        button: "Start My 15-day Trial",
-        profiles: '5 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "400+ Templated",
-        view: "Calendar View",
-        support: '24/7 Support',
-        category: 'yearly'
+        icon: <Box className="h-10 w-10 text-blue" />,
+        title: 'Environnement 3D',
+        description: 'Reproduction réaliste d’un centre de santé avec des éléments interactifs (lit, instruments).',
     },
     {
-        heading: "Business",
-        price: 29,
-        user: 'per user, per month',
-        button: "Start My 15-day Trial",
-        profiles: '10 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "600+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
-        category: 'yearly'
+        icon: <User className="h-10 w-10 text-blue" />,
+        title: 'Patient Virtuel',
+        description: 'Modèles 3D avec une grande diversité physique, dynamique et clinique.',
     },
     {
-        heading: "Agency",
-        price: 139,
-        user: 'per user, per month',
-        button: "Start My 15-day Trial",
-        profiles: '100 Social Profiles',
-        posts: '100 Scheduled Posts Per Profile',
-        templates: "800+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
-        category: 'yearly'
+        icon: <Activity className="h-10 w-10 text-blue" />,
+        title: 'Symptômes & Diagnostic',
+        description: 'Simulation de symptômes et d’examens physiques sur des zones corporelles définies.',
     },
     {
-        heading: "Agency",
-        price: 139,
-        user: 'per user, per yearly',
-        button: "Start My 15-day Trial",
-        profiles: '100 Social Profiles',
-        posts: '100 Scheduled Posts Per Profile',
-        templates: "800+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
-        category: 'monthly'
+        icon: <Smile className="h-10 w-10 text-blue" />,
+        title: 'Émotions Réalistes',
+        description: 'Expressions faciales basées sur des théories psychologiques via Face Control Rig.',
     },
     {
-        heading: "Startup",
-        price: 41,
-        user: 'per user, per yearly',
-        button: "Start My 15-day Trial",
-        profiles: '5 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "400+ Templated",
-        view: "Calendar View",
-        support: '24/7 Support',
-        category: 'monthly'
+        icon: <MessageSquare className="h-10 w-10 text-blue" />,
+        title: 'Dialogue Interactif',
+        description: 'Module de chat intelligent avec des feedbacks pédagogiques pour guider l’apprenant.',
     },
-    {
-        heading: "Business",
-        price: 29,
-        user: 'per user, per yearly',
-        button: "Start My 15-day Trial",
-        profiles: '10 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "600+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
-        category: 'monthly'
-    },
-
-
-]
+];
 
 const Manage = () => {
-    
-    const [enabled, setEnabled] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState('monthly');
-
-    const toggleEnabled = () => {
-        setEnabled(!enabled);
-        setSelectedCategory(enabled ? 'monthly' : 'yearly');
-    }
-
-    const filteredData = names.filter(items => items.category === selectedCategory);
-
     return (
-        <div id="services-section">
-            <div className='mx-auto max-w-7xl sm:py-20 lg:px-8 my-16'>
-                <h3 className='text-center text-4xl sm:text-65xl font-black'>Manage All Your Social Media <br /> Profiles From One Place.</h3>
-
-
-                <div className='md:flex md:justify-around mt-20'>
-                    <div className='flex gap-5 justify-center md:justify-start'>
-                        <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} />
-                        <h4 className='text-lg font-semibold'>Free 15-day trial</h4>
-                    </div>
-                    <div className='flex gap-5 justify-center md:justify-start'>
-                        <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} />
-                        <h4 className='text-lg font-semibold'>Unlimited Team Members</h4>
-                    </div>
-                    <div className='flex gap-5 justify-center md:justify-start'>
-                        <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} />
-                        <h4 className='text-lg font-semibold'>Cancel Anytime</h4>
-                    </div>
+        <section id="outil" className="py-20 sm:py-32 bg-lightgrey">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <div className="text-center">
+                    <h2 className="text-4xl lg:text-5xl font-bold text-darkpurple mb-4">
+                        L’Outil DiagVerse
+                    </h2>
+                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Un environnement 3D pour la consultation, un patient virtuel 3D animé par l’intelligence artificielle et les agents virtuels.
+                    </p>
                 </div>
 
-
-                <div className='mt-6 relative'>
-                    <div className='dance-text mb-5'>get 3 months free</div>
-                    <Image src="/images/manage/toggle.svg" alt="toggle-image" width={24} height={24} className="toggleImage" />
-                    <div className='flex justify-center'>
-                        <h3 className='text-sm font-medium mr-5'>Billed Yearly</h3>
-                        <Switch
-                            checked={enabled}
-                            onChange={toggleEnabled}
-                            className={`${enabled ? 'bg-darkpurple' : 'bg-darkpurple'
-                                } relative inline-flex h-6 w-11 items-center rounded-full`}
-                        >
-                            <span className="sr-only text-black">Enable notifications</span>
-                            <span className={`${enabled ? 'translate-x-6' : 'translate-x-1'
-                                } inline-block h-4 w-4 transform rounded-full bg-white transition`}
-                            />
-                        </Switch>
-                        <h3 className='text-sm font-medium ml-5'>Billed Monthly</h3>
-                    </div>
-                </div>
-
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 mx-5 gap-14 manage'>
-                    {filteredData.map((items, i) => (
-                        <div className='manageTabs text-center p-10' key={i}>
-                            <h4 className='text-2xl font-bold mb-3'>{items.heading}</h4>
-                            <h2 className='text-5xl sm:text-65xl font-extrabold mb-3'>${items.price}</h2>
-                            <p className='text-sm font-medium text-darkgrey mb-6'>{items.user}</p>
-                            <button className='text-sm font-bold text-blue bg-transparent hover:bg-blue hover:text-white border-2 border-blue rounded-full py-4 px-12 mb-6'>{items.button}</button>
-                            <hr style={{ color: "darkgrey", width: "50%", margin: "auto" }} />
-                            <h3 className='text-sm font-medium text-darkgrey mb-3 mt-6'>{items.profiles}</h3>
-                            <h3 className='text-sm font-medium text-darkgrey mb-3'>{items.posts}</h3>
-                            <h3 className='text-sm font-medium text-darkgrey mb-3'>{items.templates}</h3>
-                            <h3 className='text-sm font-medium text-darkgrey mb-3'>{items.view}</h3>
-                            <h3 className='text-sm font-medium text-darkgrey mb-3'>{items.support}</h3>
+                {/* Grille de fonctionnalités */}
+                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {features.map((feature) => (
+                        <div key={feature.title} className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow">
+                            <div className="mb-4">{feature.icon}</div>
+                            <h3 className="text-xl font-semibold text-darkpurple mb-2">{feature.title}</h3>
+                            <p className="text-gray-600">{feature.description}</p>
                         </div>
                     ))}
                 </div>
 
+                {/* Placeholder pour les captures d'écran */}
+                <div className="mt-20 text-center">
+                    <h3 className="text-2xl font-semibold mb-4 text-darkpurple">Captures d’écran de l’interface</h3>
+                    <div className="w-full h-96 bg-gray-300 rounded-2xl flex items-center justify-center border-2 border-dashed">
+                        <div className='text-center'>
+                            <MonitorSmartphone className="mx-auto h-12 w-12 text-gray-500" />
+                            <span className="mt-2 block text-gray-500">Espace réservé aux captures d’écran</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     );
 }
 

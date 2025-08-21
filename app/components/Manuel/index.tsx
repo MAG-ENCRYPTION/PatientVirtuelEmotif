@@ -1,7 +1,7 @@
 import React from 'react';
 import { DownloadCloud, Package, Navigation, BrainCircuit, MessageCircle } from 'lucide-react';
 
-// Les données des sous-sections ne changent pas
+
 const subSections = [
     {
         icon: <Package className="h-8 w-8 text-blue" />,
@@ -56,7 +56,7 @@ const Manuel = () => {
                 {/* BOUTON DE TÉLÉCHARGEMENT CENTRÉ */}
                 <div className="mt-16 text-center">
                     <a
-                        href="/manual.pdf" // Assurez-vous que le fichier est dans /public/manual.pdf
+                        href="/manual.pdf"
                         download
                         className="bg-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-navyblue transition-transform transform hover:scale-105 inline-flex items-center gap-3"
                     >

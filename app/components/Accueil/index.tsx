@@ -1,44 +1,37 @@
 import React from 'react';
-import Image from 'next/image';
-import { Target } from 'lucide-react';
+import { PlayCircle } from 'lucide-react';
 
-const Aboutus = () => {
+const Accueil = () => {
     return (
-        <section id="objectif" className="py-20 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl lg:max-w-none text-center">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-darkpurple flex items-center justify-center gap-4">
-                        <Target className="h-10 w-10 text-blue" />
-                        L'Objectif de DiagVerse
-                    </h2>
-                </div>
-                <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-x-16 gap-y-10">
+        <section
+            id="accueil"
+            className="relative h-screen flex items-center justify-center text-center text-white bg-cover bg-center"
 
-                    {/* COLONNE-1 : Image illustrative */}
-                    <div className="order-last lg:order-first">
-                        {/* Placeholder pour votre image */}
-                        <div className="w-full h-96 bg-gray-200 rounded-2xl flex items-center justify-center">
-                            <span className="text-gray-500">Espace pour image illustrative</span>
-                        </div>
-                    </div>
+            style={{ backgroundImage: 'url(/images/banner/DiAGNOSTIQUER_ET_APPRENDRE.png)' }}
+        >
 
-                    {/* COLONNE-2 : Contenu texte */}
-                    <div className="text-lg text-gray-700 leading-relaxed">
-                        <p>
-                            Réduire les erreurs de diagnostic en apportant aux médecins apprenants
-                            un espace où l'apprentissage de la consultation se fait de façon simple.
-                        </p>
-                        <p className="mt-4">
-                            DiagVerse offre un environnement 3D immersif et sécurisé pour s'entraîner,
-                            expérimenter face à des patients virtuels, et perfectionner ses compétences
-                            cliniques sans aucun risque.
-                        </p>
-                    </div>
+            <div className="absolute inset-0 bg-black opacity-60"></div>
 
-                </div>
+            <div className="relative z-10 p-4 max-w-4xl mx-auto">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                    Bienvenue dans DiagVerse
+                </h1>
+                <p className="text-xl md:text-2xl mb-6 font-light">
+                    L 'immersion au coeur du diagnostic médical
+                </p>
+                <p className="text-lg md:text-xl mb-8">
+                    Apprendre à diagnostiquer n' a jamais été aussi simple.
+                </p>
+                <a
+                    href="#demo"
+                    className="bg-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-navyblue transition-transform transform hover:scale-105 inline-flex items-center gap-3"
+                >
+                    <PlayCircle className="h-6 w-6" />
+                    Essayer la démo gratuite
+                </a>
             </div>
         </section>
     );
 }
 
-export default Aboutus;
+export default Accueil;

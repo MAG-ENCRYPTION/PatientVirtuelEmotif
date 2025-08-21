@@ -48,7 +48,7 @@ const Drawer = ({ isOpen, setIsOpen }: DrawerProps) => {
 const DrawerContent = () => {
     const { navigation, contactLink, demoButton } = require('./Drawerdata');
 
-    // LA MÊME FONCTION DE DÉFILEMENT
+
     const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
         const targetId = href.substring(1);
@@ -65,7 +65,6 @@ const DrawerContent = () => {
                     <Link
                         key={item.name}
                         href={item.href}
-                        // ON AJOUTE L'ÉVÉNEMENT ONCLICK ICI AUSSI
                         onClick={(e) => handleLinkClick(e, item.href)}
                         className='text-black hover:bg-gray-100 hover:text-purple block py-3 rounded-md text-base font-medium'
                     >

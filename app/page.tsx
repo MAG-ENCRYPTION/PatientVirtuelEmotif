@@ -1,17 +1,10 @@
-import Accueil from './components/Banner/index';
-import Objectif from '@/app/components/Accueil/index';
+import Accueil from '@/app/components/Accueil/index';
+import Objectif from '@/app/components/Objectif/index';
 import Manuel from '@/app/components/Manuel/index';
-import Digital from './components/Digital/index';
-import Beliefs from './components/Beliefs/index';
-import Contributeurs from './components/Wework/index';
-import Ourteam from './components/Ourteam/index';
-import Demo from './components/Featured/index';
-import Outil from './components/Manage/index';
-import FAQ from './components/FAQ/index';
-import Testimonials from './components/Testimonials/index';
-import Articles from './components/Articles/index';
-import Contact from './components/Joinus/index';
-import Insta from './components/Insta/index';
+import Contributeurs from '@/app/components/Contributeurs/index';
+import Demo from '@/app/components/Demo/index';
+import Outil from '@/app/components/Outil/index';
+import Contact from '@/app/components/Contact/index';
 
 
 export default function Home() {

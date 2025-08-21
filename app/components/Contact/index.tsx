@@ -17,8 +17,7 @@ const Contact = () => {
     };
 
     return (
-        // ÉTAPE 1 : On retire la couleur de fond de la section principale.
-        // La section sert maintenant de conteneur avec de l'espacement (padding).
+
         <section id="contact" className="py-20 sm:py-32">
             <div className='mx-auto max-w-7xl px-6 lg:px-8'>
                 <div className="text-center">
@@ -30,8 +29,7 @@ const Contact = () => {
                     </p>
                 </div>
 
-                {/* ÉTAPE 2 : On crée un nouveau conteneur "cadre" qui englobe le contenu. */}
-                {/* C'est ce cadre qui aura la couleur de fond et l'ombre. */}
+
                 <div className="mt-16 max-w-5xl mx-auto bg-white p-8 sm:p-12 rounded-2xl shadow-xl border border-gray-100">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-10">
 
@@ -81,7 +79,7 @@ const Contact = () => {
                             </div>
                         </form>
 
-                        {/* Colonne 2 : Informations de contact */}
+
                         <div className="flex flex-col justify-center space-y-8">
                             <h3 className="text-2xl font-bold text-darkpurple mb-4">Nos coordonnées</h3>
                             <div className="flex items-center gap-4">

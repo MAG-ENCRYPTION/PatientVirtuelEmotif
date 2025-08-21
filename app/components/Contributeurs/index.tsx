@@ -4,11 +4,11 @@ import React, { Component } from "react";
 import Image from "next/image";
 import { Linkedin } from 'lucide-react';
 
-// CAROUSEL DATA: Remplacez ces données par les informations de vos contributeurs
+
 interface Contributor {
     name: string;
     role: string;
-    avatar: string; // Chemin vers l'avatar, ex: '/images/team/avatar1.png'
+    avatar: string;
     linkedinUrl: string;
 }
 

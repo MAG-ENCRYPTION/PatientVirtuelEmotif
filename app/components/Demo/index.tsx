@@ -4,7 +4,7 @@ import { Download, PlayCircle, UserPlus} from 'lucide-react';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import { FaWindows } from 'react-icons/fa';
 
-const Featured = () => {
+const Demo = () => {
     return (
         <section id="demo" className="py-20 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -66,4 +66,4 @@ const Featured = () => {
     );
 }
 
-export default Featured;
+export default Demo;

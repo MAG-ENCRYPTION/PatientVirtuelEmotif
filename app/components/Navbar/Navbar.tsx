@@ -12,7 +12,7 @@ const Navbar = () => {
 
     const allNavLinks = [...navigation, contactLink];
 
-    // LA FONCTION MAGIQUE QUI GÈRE LE DÉFILEMENT
+
     const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
         const targetId = href.substring(1); // On retire le '#'

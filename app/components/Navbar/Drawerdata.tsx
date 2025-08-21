@@ -19,5 +19,5 @@ export const contactLink: NavLink = {
 
 export const demoButton: NavLink = {
     name: 'Essayer la Démo',
-    href: '#featured',
+    href: '#demo',
 }

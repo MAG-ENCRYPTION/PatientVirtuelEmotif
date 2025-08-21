@@ -6,13 +6,15 @@ interface ProductType {
     id: number;
     section: string;
     link: string[];
+    hrefs?: string[];
 }
 
 const products: ProductType[] = [
     {
         id: 1,
         section: "Menu",
-        link: ['Home', 'Popular', 'About', 'Contact'],
+        link: ['Accueil', 'Objectif'],
+        hrefs: ['#accueil', '#objectif']
     },
     {
         id: 2,
@@ -40,16 +42,24 @@ const footer = () => {
                     {/* COLUMN-1 */}
 
                     <div className='col-span-4'>
-                        <h3 className='text-white text-4xl font-semibold leading-9 mb-4 lg:mb-20'> Desgy Solutions</h3>
+
+                        <h3 className='text-white text-4xl font-semibold leading-9 mb-4 lg:mb-20'> Diagverse </h3>
                         <div className='flex gap-4'>
+
                             <div className='footer-icons'>
-                                <Link href="https://facebook.com"><Image src={'/images/footer/vec.svg'} alt="facebook" width={15} height={20} /></Link>
+                                <Link href="https://linkedin.com" target="_blank">
+                                    <Image src={'/images/footer/linkedin.png'} alt="LinkedIn" width={20} height={20} />
+                                </Link>
                             </div>
                             <div className='footer-icons'>
-                                <Link href="https://twitter.com"><Image src={'/images/footer/twitter.svg'} alt="twitter" width={20} height={20} /></Link>
+                                <Link href="https://facebook.com" target="_blank">
+                                    <Image src={'images/footer/facebook.svg'}alt="LinkedIn" width={20} height={20}/>
+                                </Link>
                             </div>
                             <div className='footer-icons'>
-                                <Link href="https://instagram.com"><Image src={'/images/footer/instagram.svg'} alt="instagram" width={20} height={20} /></Link>
+                                <Link href="https://twitter.com" target="_blank">
+                                    <Image src={'/images/footer/twitter.svg'} alt="Twitter" width={20} height={20} />
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -62,7 +72,8 @@ const footer = () => {
                             <ul>
                                 {product.link.map((link: string, index: number) => (
                                     <li key={index} className='mb-5'>
-                                        <Link href="/" className="text-white text-lg font-normal mb-6 space-links">{link}</Link>
+                                        {/* Le lien pointe vers l'ancre si elle est définie, sinon vers "/" */}
+                                        <Link href={product.hrefs ? product.hrefs[index] : "/"} className="text-white text-lg font-normal mb-6 space-links">{link}</Link>
                                     </li>
                                 ))}
                             </ul>
@@ -78,7 +89,8 @@ const footer = () => {
                 <div className="pt-5 pb-5 px-4 sm:px-6 lg:px-4 border-solid border-t border-footer">
                     <div className="mt-4 grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 xl:gap-x-8">
                         <div>
-                            <h3 className='text-center md:text-start text-offwhite text-lg'>@2023 - All Rights Reserved by <Link href="https://adminmart.com/" target="_blank"> Adminmart.com</Link></h3>
+
+                            <h3 className='text-center md:text-start text-offwhite text-lg'>© 2025 DiagVerse. Tous droits réservés.</h3>
                         </div>
                         <div className="flex justify-center md:justify-end">
                             <Link href="/">

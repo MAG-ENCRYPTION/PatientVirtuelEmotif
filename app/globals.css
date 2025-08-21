@@ -35,8 +35,8 @@ html:not([data-scroll="0"]) .border-right {
 }
 
 html {
-  --scroll-behavior: smooth !important;
-  scroll-behavior: smooth !important;
+
+  scroll-behavior: smooth ;
 }
 
 .navbar {

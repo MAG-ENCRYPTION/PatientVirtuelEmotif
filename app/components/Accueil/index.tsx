@@ -5,22 +5,31 @@ const Accueil = () => {
     return (
         <section
             id="accueil"
-            className="relative h-screen flex items-center justify-center text-center text-white bg-cover bg-center"
-
-            style={{ backgroundImage: 'url(/images/banner/DiAGNOSTIQUER_ET_APPRENDRE.png)' }}
+            className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden bg-gray-800" // Ajout d'un fond de secours
         >
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute top-0 left-0 w-full h-full object-cover z-0"
+            >
 
-            <div className="absolute inset-0 bg-black opacity-60"></div>
+                <source src="/videos/banner/Diagverse_V1.mp4" type="video/mp4" />
 
-            <div className="relative z-10 p-4 max-w-4xl mx-auto">
+            </video>
+
+            <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
+
+            <div className="relative z-20 p-4 max-w-4xl mx-auto">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
                     Bienvenue dans DiagVerse
                 </h1>
                 <p className="text-xl md:text-2xl mb-6 font-light">
-                    L 'immersion au coeur du diagnostic médical
+                    L'immersion au coeur du diagnostic médical
                 </p>
                 <p className="text-lg md:text-xl mb-8">
-                    Apprendre à diagnostiquer n' a jamais été aussi simple.
+                    Apprendre à diagnostiquer n'a jamais été aussi simple.
                 </p>
                 <a
                     href="#demo"

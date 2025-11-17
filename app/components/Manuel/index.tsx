@@ -27,7 +27,7 @@ const subSections = [
   },
   {
     icon: <BrainCircuit className="h-8 w-8 text-blue" />,
-    title: "Diagnostic (IA)",
+    title: "Diagnostic",
     description: "Utiliser les outils et l'IA d'aide.",
   },
   {
@@ -122,7 +122,7 @@ const Manuel = () => {
             </h2>
             <p className="text-gray-600 text-sm">
               Le manuel PDF du DiagVerse est actuellement en cours de
-              préparation. Merci de votre patience 🙏
+              préparation. Merci de Patienter encore un tout petit peu. 🙏
             </p>
 
             <button
